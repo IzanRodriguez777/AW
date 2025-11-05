@@ -1,0 +1,60 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Contenedor principal usando GRID */
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Primera fila para el cuadrado, resto del espacio libre */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Item cuadrado usando FLEXBOX */
+.square-item {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    
+    /* Hacerlo cuadrado */
+    width: 200px;
+    height: 200px;
+    
+    /* Centrar horizontalmente en el grid */
+    justify-self: center;
+    
+    /* Estilos visuales */
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Versión responsive */
+@media (max-width: 768px) {
+    .square-item {
+        width: 150px;
+        height: 150px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .square-item {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
+    }
+}
