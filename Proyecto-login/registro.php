@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuario</title>
+<meta charset="UTF-8">
+<title>Registro de usuario</title>
+<link rel="stylesheet" href="estilo-registro.css">
+<style>
+    h1 {
+        background-color: red;
+    }
+</style>
 </head>
 <body>
-    <h1>Registro</h1>
-    <form action="procesar_registro.php" method="post">
-        <label for="">Usuario</label>
-        <input type="text" name="usuario" required> <br><br>
-        <label >Contraseña</label>
-        <input type="oassword" name="password" required> <br><br>
-        <button type="submit"> Registrarse </button>
-    </form>
-    <p>¿Ya tienes cuenta? <a href="login.php"></a></p>
+<h1>Registrarse</h1>
+<form action="procesar_registro.php" method="post">
+<label>Usuario:</label>
+<input type="text" name="usuario" required><br><br>
+<label>Contraseña:</label>
+<input type="password" name="password" required><br><br>
+<button type="submit">Registrarse</button>
+</form>
+<p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>
 </body>
 </html>

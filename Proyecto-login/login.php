@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesion</title>
+<meta charset="UTF-8">
+<title>Iniciar sesión</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form action="procesar_login.php" required> <br><br>
-    <label >Usuario</label>
-    <input type="text" name="usuario" required> <br><br>
-    <label >Contraseña</label>
-    <input type="password" name="password" required> <br><br>
-    <button type="submit"> Entrar </button>
-    </form>
-    
-    <p>No tienes cuenta? <a href="registro.php">Registrate aqui</a></p>
-    
+<h1>Iniciar Sesión </h1>
+<form action="procesar_login.php" method="post">
+<label>Usuario:</label>
+<input type="text" name="usuario" required><br><br>
+<label>Contraseña:</label>
+<input type="password" name="password" required><br><br>
+<button type="submit">Entrar</button>
+</form>
+<p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
 </body>
 </html>
