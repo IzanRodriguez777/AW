@@ -16,17 +16,20 @@ $stmt->store_result();
 <head>
 <meta charset="UTF-8">
 <title>Resultado Login</title>
+<link rel="icon" href="https://statics-maker.llt-services.com/cad/images/2021/01/08/original/0683a89e-0561-495c-85eb-dd457b5dac04-190620593.jpg">
 <style>
     body {
         font-family: Arial;
-        background-color: #e6e9ef;
+        background-color: yellow;
         text-align: center;
         margin-top: 100px;
     }
 
-    h1 { color: #2f80ed; }
+    h1 { color: #2f80ed; 
+    }
 
-    a { color: #1b62c6; }
+    a { color: #1b62c6; 
+    }
 </style>
 </head>
 <body>
@@ -54,6 +57,7 @@ if ($stmt->num_rows > 0) {
 $stmt->close();
 $conn->close();
 ?>
-
+<br>
+<img src="https://media1.giphy.com/media/5tR21oBPDJrQlaRLZ4/200_d.gif" width="500px" alt="">
 </body>
 </html>

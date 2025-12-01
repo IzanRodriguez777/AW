@@ -7,60 +7,63 @@ include "conexion.php";
 $usuario = $_POST['usuario']; 
 $password = $_POST['password']; 
 
-// esto se añade para lo del verificar
-$stmt_check = $conn->prepare("SELECT id FROM usuarios WHERE usuario = ?");
-$stmt_check->bind_param("s", $usuario);
-$stmt_check->execute();
-$stmt_check->store_result();
+// Verificar si el usuario ya existe (forma sencilla)
+$resultado = $conn->query("SELECT * FROM usuarios WHERE usuario = '$usuario'");
 
-if ($stmt_check->num_rows > 0) {
-    $usuario_existe = true;
+if ($resultado->num_rows > 0) {
+    // Usuario ya existe
+    $error_usuario = true;
 } else {
-    $usuario_existe = false;
+    $error_usuario = false;
     
-    // Si no existe, proceder con el registro
-    $hash = password_hash($password, PASSWORD_DEFAULT); 
-    $stmt = $conn->prepare("INSERT INTO usuarios (usuario, password) VALUES (?, ?)"); 
-    $stmt->bind_param("ss", $usuario, $hash); 
-    $registro_exitoso = $stmt->execute();
-    $stmt->close();
+    // Si no existe, lo registramos
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    if ($conn->query("INSERT INTO usuarios (usuario, password) VALUES ('$usuario', '$hash')")) {
+        $registro_exitoso = true;
+    } else {
+        $registro_exitoso = false;
+    }
 }
 
-$stmt_check->close();
 $conn->close();
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" href="https://statics-maker.llt-services.com/cad/images/2021/01/08/original/0683a89e-0561-495c-85eb-dd457b5dac04-190620593.jpg">
+
     <meta charset="UTF-8">
     <title>Registro</title>
     <style>
         body {
-            background-color: #e6e9ef;
+            background-color: blue;
             font-family: Arial;
             text-align: center;
             margin-top: 100px;
         }
 
         h1 {
-            color: #2f80ed;
+            color: yellow;
         }
 
         a {
-            color: #1b62c6;
+            color: yellow;
             text-decoration: none;
         }
+        
     </style>
 </head>
 <body>
+    <img src="https://logodownload.org/wp-content/uploads/2023/05/cadiz-cf-logo-1.png" width="100px" class="cadiz" alt="">
+
 
 <?php
-if ($usuario_existe) {
+if ($error_usuario) {
     echo "<h1>Error: El nombre de usuario ya está en uso</h1>";
     echo "<p>Por favor, elige otro nombre de usuario.</p>";
-    echo "<p><a href='registro.php?error=usuario_existe'>Volver al registro</a></p>";
-} elseif ($registro_exitoso) {
+    echo "<p><a href='registro.php'>Volver al registro</a></p>";
+} else if ($registro_exitoso) {
     echo "<h1>Usuario registrado correctamente 🎉</h1>"; 
     echo "<p><a href='login.php'>Iniciar sesión</a></p>";
 } else {

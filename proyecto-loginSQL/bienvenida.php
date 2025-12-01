@@ -10,9 +10,11 @@ if (!isset($_SESSION['usuario'])) {
 <head>
 <meta charset="UTF-8">
 <title>Bienvenida</title>
+<link rel="icon" href="https://statics-maker.llt-services.com/cad/images/2021/01/08/original/0683a89e-0561-495c-85eb-dd457b5dac04-190620593.jpg">
+
 <style>
     body {
-        background-color: #e6e9ef;
+        background-color: yellow;
         font-family: Arial;
         margin: 0;
         text-align: center;
@@ -47,6 +49,8 @@ if (!isset($_SESSION['usuario'])) {
     <p><b><?php echo $_SESSION['usuario']; ?></b>, has iniciado sesión correctamente 🎉</p>
     <p><a href="logout.php">Cerrar sesión</a></p>
 </div>
+
+<img src="https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2021/09/21/16322539471634.jpg" width="300px" alt="">
 
 </body>
 </html>
