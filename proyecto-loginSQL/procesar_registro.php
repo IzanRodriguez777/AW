@@ -7,16 +7,14 @@ include "conexion.php";
 $usuario = $_POST['usuario']; 
 $password = $_POST['password']; 
 
-// Verificar si el usuario ya existe (forma sencilla)
+
 $resultado = $conn->query("SELECT * FROM usuarios WHERE usuario = '$usuario'");
 
 if ($resultado->num_rows > 0) {
-    // Usuario ya existe
     $error_usuario = true;
 } else {
     $error_usuario = false;
     
-    // Si no existe, lo registramos
     $hash = password_hash($password, PASSWORD_DEFAULT);
     if ($conn->query("INSERT INTO usuarios (usuario, password) VALUES ('$usuario', '$hash')")) {
         $registro_exitoso = true;
