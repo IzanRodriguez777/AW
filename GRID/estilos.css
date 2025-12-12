@@ -1,0 +1,17 @@
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+    gap: 10px ; /* espacio entre items*/
+}
+
+
+.item{
+    background-color: thistle;
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
