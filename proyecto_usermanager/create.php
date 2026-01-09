@@ -6,8 +6,9 @@ $nombre = $_POST["nombre"];
 $email = $_POST["email"];
 $edad = $_POST["edad"];
 $rol = $_POST["rol"];
-$stmt = $pdo->prepare("INSERT INTO usuarios (nombre,email,edad,rol) VALUES (?,?,?,?)");
-$stmt->execute([$nombre, $email, $edad, $rol]);
+$password = password_hash("123456", PASSWORD_DEFAULT); // Contraseña por defecto
+$stmt = $pdo->prepare("INSERT INTO usuarios (nombre, email, password, edad, rol) VALUES (?, ?, ?, ?, ?)");
+$stmt->execute([$nombre, $email, $password, $edad, $rol]);
 header("Location: list.php");
 exit;
 }
@@ -25,6 +26,7 @@ exit;
 <form method="POST">
 <input type="text" name="nombre" placeholder="Nombre" required>
 <input type="email" name="email" placeholder="Email" required>
+<input type="password" name="password" placeholder="Password" required>
 <input type="number" name="edad" placeholder="Edad" required>
 <select name="rol">
 <option value="user">Usuario</option>

@@ -35,7 +35,7 @@ table {
 }
 
 table th {
-    background: #007bff;
+    background: #1100ff;
     color: white;
     padding: 14px;
     font-size: 15px;
@@ -68,11 +68,11 @@ tr:hover td {
 
 
 .btn {
-    background: #007bff;
+    background: green;
 }
 
 .btn:hover {
-    background: #005fcc;
+    background: green;
 }
 
 
@@ -112,7 +112,7 @@ select {
 
 input:focus,
 select:focus {
-    border-color: #007bff;
+    border-color: aqua;
     background: #fff;
 }
 
