@@ -1,15 +1,18 @@
-<?php include "db.php"; ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>UserManager</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <title>UserManager</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="container">
-<h1>Gestión de Usuarios</h1>
-<a class="btn" href="list.php">Ir al CRUD</a>
-</div>
+    <div class="container">
+        <h1>Bienvenido a UserManager</h1>
+        <p >Sistema de gestión de usuarios</p>
+        <div class="links">
+            <a href="login.php" class="btn">Iniciar Sesión</a>
+            <a href="register.php" class="btn">Registrarse</a>
+        </div>
+    </div>
 </body>
 </html>

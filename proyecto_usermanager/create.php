@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id']) || $_SESSION['rol'] != 'admin') {
+    header('Location: dashboard.php');
+    exit();
+}
 include "db.php";
 
 if ($_POST) {
@@ -23,11 +28,16 @@ exit;
 <body>
 <div class="form-container">
 <h1>Crear Usuario</h1>
+<a href="admin_list.php" class="btn">← Volver</a>
 <form method="POST">
 <input type="text" name="nombre" placeholder="Nombre" required>
 <input type="email" name="email" placeholder="Email" required>
 <input type="password" name="password" placeholder="Password" required>
 <input type="number" name="edad" placeholder="Edad" required>
+<select name="rol">
+<option value="user">Usuario</option>
+<option value="admin">Administrador</option>
+</select>
 <select name="rol">
 <option value="user">Usuario</option>
 <option value="admin">Administrador</option>

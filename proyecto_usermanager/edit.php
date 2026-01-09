@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id']) || $_SESSION['rol'] != 'admin') {
+    header('Location: dashboard.php');
+    exit();
+}
 include "db.php";
 $id = $_GET["id"];
 $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE id=?");
@@ -26,6 +31,7 @@ exit;
 <body>
 <div class="form-container">
 <h1>Editar Usuario</h1>
+<a href="admin_list.php" class="btn">← Volver</a>
 <form method="POST">
 <input type="text" name="nombre" value="<?= $usuario['nombre'] ?>" required>
 <input type="email" name="email" value="<?= $usuario['email'] ?>" required>
