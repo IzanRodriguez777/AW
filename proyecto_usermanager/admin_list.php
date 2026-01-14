@@ -20,8 +20,10 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Usuarios</title>
+    <title>Control de administrador</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKnTAu4HNQm5RpxISYf6qvYksnstXThV-2ag&s" sizes="32x32">
+
 </head>
 <body>
     <div class="container">

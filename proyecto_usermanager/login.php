@@ -9,9 +9,11 @@ if (isset($_SESSION['user_id'])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Inicio de sesion </title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKnTAu4HNQm5RpxISYf6qvYksnstXThV-2ag&s" sizes="32x32">
 </head>
+<script src="js/validacion.js"></script>
 <body>
     <div class="container">
         <h1>Iniciar sesión</h1>

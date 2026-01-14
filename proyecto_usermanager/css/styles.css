@@ -1,141 +1,152 @@
-
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
     margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f2f4f7;
+    padding: 20px;
 }
 
-
-.container,
-.form-container {
-    max-width: 900px;
-    margin: 60px auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.07);
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
 }
 
 h1 {
+    color: #3366cc;
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 32px;
-    font-weight: 700;
-    color: #2b2b2b;
+    margin-bottom: 20px;
 }
 
+h2 {
+    color: #444;
+    margin-top: 20px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button, .btn {
+    background-color: #3366cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+button:hover, .btn:hover {
+    background-color: #254e99;
+}
+
+.btn-red {
+    background-color: #cc3333;
+}
+
+.btn-green {
+    background-color: #33cc33;
+}
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    overflow: hidden;
-    border-radius: 12px;
+    margin: 20px 0;
 }
 
-table th {
-    background: #1100ff;
+th {
+    background-color: #3366cc;
     color: white;
-    padding: 14px;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+    padding: 10px;
+    text-align: left;
 }
 
-table td {
-    padding: 12px;
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.error {
+    background-color: #ffcccc;
+    color: #cc0000;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.success {
+    background-color: #ccffcc;
+    color: #006600;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.admin-badge {
+    background-color: rgb(56, 189, 56);
+    color: black;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.user-badge {
+    background-color: #63c563;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.links {
     text-align: center;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    margin-top: 20px;
 }
 
-tr:hover td {
-    background: #f7faff;
-}
-
-
-.btn,
-.btn-edit,
-.btn-delete {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 10px;
+.links a {
+    color: #3366cc;
     text-decoration: none;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
 }
 
-
-.btn {
-    background: green;
+.links a:hover {
+    text-decoration: underline;
 }
 
-.btn:hover {
-    background: green;
+.info-box {
+    background-color: #e6f2ff;
+    padding: 15px;
+    border-radius: 3px;
+    margin: 15px 0;
+    border-left: 4px solid #3366cc;
 }
 
-
-.btn-edit {
-    background: #f0ad4e;
+.user-data {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 3px;
+    margin: 15px 0;
 }
 
-.btn-edit:hover {
-    background: #db993c;
-}
-
-
-.btn-delete {
-    background: #d9534f;
-}
-
-.btn-delete:hover {
-    background: #c73f3b;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input,
-select {
-    padding: 12px;
-    font-size: 15px;
-    border: 2px solid #d1d5db;
-    border-radius: 10px;
-    outline: none;
-    transition: 0.2s;
-    background: #fafafa;
-}
-
-input:focus,
-select:focus {
-    border-color: aqua;
-    background: #fff;
-}
-
-button.btn {
-    width: 100%;
-    cursor: pointer;
-}
-
-
-@media (max-width: 600px) {
-    .container,
-    .form-container {
-        margin: 20px;
-        padding: 20px;
-    }
-
-    table th,
-    table td {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 26px;
-    }
+.user-data p {
+    margin: 8px 0;
+    padding: 5px 0;
+    border-bottom: 1px dotted #ddd;
 }

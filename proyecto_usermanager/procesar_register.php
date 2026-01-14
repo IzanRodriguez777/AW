@@ -10,6 +10,14 @@ $edad = $_POST["edad"];
 $hash = password_hash($password, PASSWORD_DEFAULT);
 $rol = "user";
 
+$stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
+$stmt->execute([$email]);
+
+if ($stmt->fetch()) {
+    header("Location: register.php?error=1");
+    exit;
+}
+
 $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, email, password, edad, rol) VALUES (?, ?, ?, ?, ?)");
 $stmt->execute([$nombre, $email, $hash, $edad, $rol]);
 
